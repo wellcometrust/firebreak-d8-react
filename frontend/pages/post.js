@@ -25,4 +25,6 @@ Post.getInitialProps = async function (context) {
     return { article: article.data };
 };
 
+
+
 export default Post;
