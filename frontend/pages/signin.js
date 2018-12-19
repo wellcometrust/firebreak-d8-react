@@ -24,8 +24,6 @@ class Signin extends React.Component {
   handleSubmit(event) {
     const username = this.state.email;
     const password = this.state.password;
-    console.log(this.state);
-    console.log(password);
     const trustnetAuth = new ClientOAuth2({
       clientId: 'dfc116d0-da25-4708-afbf-8dc2f09a43bf',
       clientSecret: 'pass123',
@@ -37,12 +35,14 @@ class Signin extends React.Component {
     trustnetAuth.owner.getToken(username, password)
       .then(function (user) {
         // Can also just pass the raw `data` object in place of an argument.
-        var token = trustnetAuth.createToken(user.accessToken, user.refreshToken, user.tokenType, {data: user});
+        var token = trustnetAuth.createToken(user.accessToken, user.refreshToken, user.tokenType);
 
         // Set the token TTL.
         token.expiresIn(300); // Seconds.
-        document.cookie='access_token=' + JSON.stringify(token);
-        console.log(token);
+        document.cookie='access_token=' + user.accessToken;
+        document.cookie='refresh_token=' + user.refreshToken;
+        // document.cookie='expires_token=' + Date.now + 300000;
+
       });
 
     event.preventDefault();
