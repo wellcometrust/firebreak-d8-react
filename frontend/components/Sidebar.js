@@ -21,6 +21,7 @@ const Sidebar = ({ location, time }) => (
 
         aside {
         grid-column: 1/4;
+        grid-row: 2/3;
         }
 
         div {
