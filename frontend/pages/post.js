@@ -18,7 +18,7 @@ const Post = (props) => (
 
 Post.getInitialProps = async function (context) {
     const { id } = context.query;
-    const ngrok = 'http://cbc139ec.ngrok.io';
+    const ngrok = 'http://55e116a4.ngrok.io';
     const res = await fetch(`${ngrok}/api/node/news/${id}`);
     const article = await res.json();
 
