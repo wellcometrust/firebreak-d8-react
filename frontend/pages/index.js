@@ -50,6 +50,12 @@ const Index = (props) => (
 
        .news li {
        margin-bottom: 40px;
+       min-height: 90px;
+       position: relative;
+       }
+
+       .news__text {
+       width: 80%
        }
 
        .events {
@@ -84,7 +90,8 @@ const Index = (props) => (
 
        img {
        width: 150px;
-       float: right;
+       position: absolute;
+       right: 0;
        }
     `}</style>
     </Layout>

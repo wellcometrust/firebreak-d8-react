@@ -1,12 +1,17 @@
 import Layout from '../components/Layout';
+import Sidebar from '../components/Sidebar';
 import { BASE_URL } from '../config';
 
 const Event = (props) => (
     <Layout>
         <article className='grid-container'>
-        <h1>{props.event.attributes.title}</h1>
-        <img className="article__image" src={`${BASE_URL}/${props.img.attributes.uri.url}`}/>
-        <div className="article__copy" dangerouslySetInnerHTML={{__html: props.event.attributes.main_text.value}} />
+            <Sidebar
+                location={props.event.attributes.location}
+                time={props.event.attributes.event_date}
+            />
+            <h1>{props.event.attributes.title}</h1>
+            <img className="article__image" src={`${BASE_URL}/${props.img.attributes.uri.url}`}/>
+            <div className="article__copy" dangerouslySetInnerHTML={{__html: props.event.attributes.main_text.value}} />
         </article>
     </Layout>
 );
