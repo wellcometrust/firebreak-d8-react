@@ -1,26 +1,33 @@
 import Layout from '../components/Layout';
+import Sidebar from '../components/Sidebar';
+import { BASE_URL } from '../config';
 
 const Event = (props) => (
     <Layout>
-        <h1>{props.event.attributes.title}</h1>
-        <p>{props.event.attributes.main_text.value}</p>
-
-        <style jsx>{`
-        h1 {
-         grid-area: main;
-        }
-
-    `}</style>
+        <article className='grid-container'>
+            <Sidebar
+                location={props.event.attributes.location}
+                time={props.event.attributes.event_date}
+            />
+            <h1>{props.event.attributes.title}</h1>
+            <img className="article__image" src={`${BASE_URL}/${props.img.attributes.uri.url}`}/>
+            <div className="article__copy" dangerouslySetInnerHTML={{__html: props.event.attributes.main_text.value}} />
+        </article>
     </Layout>
 );
 
 Event.getInitialProps = async function (context) {
     const { id } = context.query;
-    const ngrok = 'http://cbc139ec.ngrok.io';
-    const res = await fetch(`${ngrok}/api/node/events/${id}`);
+    const res = await fetch(`${BASE_URL}/api/node/events/${id}`);
     const event = await res.json();
 
-    return { event: event.data };
+    const resImg = await fetch(`${BASE_URL}/api/node/events/${id}/main_image`);
+    const img = await resImg.json();
+
+    return {
+        event: event.data,
+        img: img.data
+    };
 };
 
 export default Event;
