@@ -26,4 +26,6 @@ Post.getInitialProps = async function (context) {
     };
 };
 
+
+
 export default Post;

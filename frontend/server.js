@@ -21,6 +21,10 @@ app.prepare()
             app.render(req, res, actualPage, queryParams);
         });
 
+        server.get('/signin', (req, res) => {
+            return app.render(req, res, '/signin', req.query);
+        });
+
         server.get('*', (req, res) => {
             return handle(req, res);
         });
