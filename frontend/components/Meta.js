@@ -7,11 +7,12 @@ const Meta = () => (
         <meta charSet="utf-8" />
         <link rel="shortcut icon" href="/static/favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+        <link rel="stylesheet" href="/static/main.css" />
         <title>Trustnet</title>
     </Head>
 
         <style jsx global>{`
-    $bg: #333;
+    $bg: #1f2e30;
     $white: #fff;
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +37,7 @@ const Meta = () => (
     }
 
     .main {
-      margin: 30px auto;
+      margin: 40px auto;
     }
 
     .grid-container {
@@ -48,6 +49,12 @@ const Meta = () => (
 
     article * {
       grid-column: 5/14;
+    }
+
+    article h1 {
+     font-family: 'Wellcome-Bold';
+    font-size: 32px;
+    line-height: 40px;
     }
 
     .article__copy {
@@ -66,6 +73,19 @@ const Meta = () => (
 
     .article__image {
     width: 600px;
+    }
+
+    p {
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 28px;
+    }
+
+    .small {
+     font-family: "Helvetica Neue";
+     font-size: 14px;
+     line-height: 20px;
+     color: $bg;
     }
 
   `}</style>

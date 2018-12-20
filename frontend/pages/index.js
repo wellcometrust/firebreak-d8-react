@@ -21,6 +21,8 @@ const Index = (props) => (
                                 <Link href={`/news/${article.uuid[0].value}`}>
                                     <h3><a>{article.title[0].value}</a></h3>
                                 </Link>
+                                <Moment className='small' format="dddd, DD MMMM YYYY">{article.created[0].value}</Moment>
+                                <br />
                                 <p>{article.short_description[0].value}</p>
                             </div>
                         </li>
@@ -50,12 +52,12 @@ const Index = (props) => (
 
        .news li {
        margin-bottom: 40px;
-       min-height: 90px;
+       min-height: 140px;
        position: relative;
        }
 
        .news__text {
-       width: 80%
+       width: 65%
        }
 
        .events {
@@ -68,6 +70,9 @@ const Index = (props) => (
 
        h2 {
        margin-bottom: 20px;
+       font-size: 24px;
+       line-height: 32px;
+       font-family: 'Wellcome-Bold';
        }
 
        ul {
@@ -77,19 +82,23 @@ const Index = (props) => (
 
        li {
         cursor: pointer;
-        margin-right: 20px;
        }
 
        li:hover h3 {
        text-decoration: underline;
        }
 
+       li * {
+       margin-bottom: 6px;
+       }
+
        h3 {
        margin-bottom: 0;
+       font-family: 'Wellcome-Bold';
        }
 
        img {
-       width: 150px;
+       width: 250px;
        position: absolute;
        right: 0;
        }
