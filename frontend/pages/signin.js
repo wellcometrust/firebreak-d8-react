@@ -27,8 +27,8 @@ class Signin extends React.Component {
     const trustnetAuth = new ClientOAuth2({
       clientId: 'dfc116d0-da25-4708-afbf-8dc2f09a43bf',
       clientSecret: 'pass123',
-      accessTokenUri: 'http://cbc139ec.ngrok.io/oauth/token',
-      authorizationUri: 'http://cbc139ec.ngrok.io/oauth/authorize',
+      accessTokenUri: 'http://55e116a4.ngrok.io/oauth/token',
+      authorizationUri: 'http://55e116a4.ngrok.io/oauth/authorize',
       redirectUri: 'http://localhost:3000/auth/tn/callback',
     });
 

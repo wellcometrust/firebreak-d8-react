@@ -59,7 +59,7 @@ const Index = (props) => (
 );
 
 Index.getInitialProps = async function() {
-    const ngrok = 'http://cbc139ec.ngrok.io';
+    const ngrok = 'http://55e116a4.ngrok.io';
     const res = await fetch(`${ngrok}/rest/news?_format=json`);
     const data = await res.json();
 
